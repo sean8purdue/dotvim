@@ -134,3 +134,19 @@ Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
 2. "backspace wont delete in insert mode
 
 	`set backspace=indent,eol,start`
+	
+3. Disable automatic comm: 
+	
+	`autocmd BufNewFile,BufRead * setlocal formatoptions-=cro`
+
+	to check flag
+	`:set formatoptions?`
+	
+	Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.ent insertion
+	"autocmd FileType * setlocal
+	"formatoptions-=c formatoptions-=r formatoptions-=o
+	"set formatoptions-=cro
+	"I've got set formatoptions-=cro in my vimrc, but for some reason it doesn't stick. Problem is C file plugin in VIM. Since file plugin is loaded after loading .vimrc, the settings in .vimrc are overwritten.
+
+
+
