@@ -81,7 +81,7 @@ Use Vundle to manage the plugin.
 	
 ## Vim Install in Mac
 
-Use homebrew to manage package.
+- Use [homebrew](http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer) to manage package.
 
 `brew update` : update homebrew first
 
@@ -100,7 +100,9 @@ Use homebrew to manage package.
 
 One more thing you should do is to check your environment variables for those that might contain a full path to the system `vi/vim`, like EDITOR and update them to use the `/usr/local/bin/vim`.
 
-Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
+- Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
+
+- If you have two versions of one software, like vim 8.0 and vim7.0. And f you want to keep both, you'll need to change your `$PATH` environment variable so that the location of the new version appears before the location of the old version. Do this by editing `~/.bash_profile` or `~/.zshrc`.
 
 ## Problem
 
