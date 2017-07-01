@@ -28,7 +28,7 @@ Use Vundle to manage the plugin.
 
 	Put this at the top of your .vimrc to use Vundle. Remove plugins you don't need, they are for illustration purposes.
 	
-	~~~c
+	```bash
 	set nocompatible              " be iMproved, required
 	filetype off                  " required
 
@@ -72,8 +72,7 @@ Use Vundle to manage the plugin.
 	"
 	" see :h vundle for more details or wiki for FAQ
 	" Put your non-Plugin stuff after this line
-	
-	~~~
+	```
 	
 4. Install Plugins:
 
@@ -83,26 +82,26 @@ Use Vundle to manage the plugin.
 
 - Use [homebrew](http://www.bigfastblog.com/homebrew-intro-to-the-mac-os-x-package-installer) to manage package.
 
-`brew update` : update homebrew first
+	`brew update` : update homebrew first
 
-`brew options vim` : see options,
+	`brew options vim` : see options,
 
-`brew install vim`
+	`brew install vim`
 
-`brew install vim --override-system-vim` :Dangerous
+	`brew install vim --override-system-vim` :Dangerous
 
-`brew install vim ----with-client-server` : This will enable the clipboard function of vim.  If you want X11 clipboard support, you need to install it with the --with-client-server option. 
+	`brew install vim ----with-client-server` : This will enable the clipboard function of vim.  If you want X11 clipboard support, you need to install it with the --with-client-server option. 
 :**Dangerous**!! will install a non Mac-compatable version, which make the system clipboard not accessed to vim.
 
-`brew uninstall vim` : to uninstall vim
+	`brew uninstall vim` : to uninstall vim
 
-`brew upgrade vim` : If you had Vim already installed with Homebrew (or if in the future you'd like to upgrade the Vim version).
+	`brew upgrade vim` : If you had Vim already installed with Homebrew (or if in the future you'd like to upgrade the Vim version).
 
-One more thing you should do is to check your environment variables for those that might contain a full path to the system `vi/vim`, like EDITOR and update them to use the `/usr/local/bin/vim`.
+	One more thing you should do is to check your environment variables for those that might contain a full path to the system `vi/vim`, like EDITOR and update them to use the `/usr/local/bin/vim`.
 
 - Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
 
-- If you have two versions of one software, like vim 8.0 and vim7.0. And f you want to keep both, you'll need to change your `$PATH` environment variable so that the location of the new version appears before the location of the old version. Do this by editing `~/.bash_profile` or `~/.zshrc`.
+- If you have two versions of one software, like vim 8.0 and vim7.0. And f you want to keep both, you'll need to change your `$PATH` environment variable so that **the location of the new version appears before the location of the old version**. Do this by editing `~/.bash_profile` or `~/.zshrc`.
 
 ## Problem
 
@@ -110,13 +109,13 @@ One more thing you should do is to check your environment variables for those th
 
 	`vim --version | grep clipboard` : check current vim support clipboard and -xterm_clipboard. Use MacOS X (unix) version, or system clipboard may not be used!!!!!!
 	
-	~~~
+	```
 	➜  ~ vim --version
 	VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jun 24 2017 12:45:56)
 	➜ MacOS X (unix) version
 	Included patches: 1-666
 	➜ Compiled by Homebrew
-  ~~~
+  	```
 	
 	Iterm2 : 
 	
@@ -129,9 +128,9 @@ One more thing you should do is to check your environment variables for those th
 	`set clipboard=unnamed `   "set copy to system clipboard
 	
 
-	[Ref1 Not Resolevd](http://vim.wikia.com/wiki/Accessing_the_system_clipboard) 
+[Ref1 Not Resolevd](http://vim.wikia.com/wiki/Accessing_the_system_clipboard) 
 
-	[Ref2 Not Resolevd](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
+[Ref2 Not Resolevd](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
 	
 2. "backspace wont delete in insert mode
 
@@ -149,6 +148,3 @@ One more thing you should do is to check your environment variables for those th
 	"formatoptions-=c formatoptions-=r formatoptions-=o
 	"set formatoptions-=cro
 	"I've got set formatoptions-=cro in my vimrc, but for some reason it doesn't stick. Problem is C file plugin in VIM. Since file plugin is loaded after loading .vimrc, the settings in .vimrc are overwritten.
-
-
-
