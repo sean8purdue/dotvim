@@ -1,0 +1,140 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim' " let Vundle manage, required
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'easymotion/vim-easymotion'
+"Plugin 'Raimondi/delimitMate'     "Auto Pair
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+"Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'tpope/vim-surround'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Mac Specify================
+"map Ctrl + E in normal mode to copy to clipboard
+nnoremap <C-E> "*yy
+"map Ctrl + E in visual mode to copy to clipboard
+vnoremap <C-W> "*y
+"past clipboard in normal mode, if in visual using CMD+v
+nnoremap <C-D> o<Esc>"*p
+
+"nnoremap <C-w> bdw
+" Linux General===============
+" Finding Files
+"set path+=**
+"set wildmenu
+
+"set cindent
+"filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+syntax on
+set number
+"set relativenumber
+set mouse=a          "set mouse cursor move
+"if !has("nvim")
+    "set ttymouse=xterm2
+"endif
+set hlsearch         "heighlight all search pattern
+" Map <CR> to clear last search highlighting
+" !!!! Dangerous!! Map <ESC> May course errors and unexpected behaviours
+"nnoremap <CR> :noh<CR>
+"inoremap jj <ESC>
+set splitright       "make vsplit put buffer on the right of the current buffer
+set laststatus=2
+set background=dark  "set colorscheme
+colorscheme Tomorrow-Night_Sean
+let base16colorspace=256  "Access colors present in 256 colorspace
+
+"Disable automatic comm: :set formatoptions? to check flag
+"Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.ent insertion
+"autocmd FileType * setlocal
+"formatoptions-=c formatoptions-=r formatoptions-=o
+"set formatoptions-=cro
+"I've got set formatoptions-=cro in my vimrc, but for some reason it doesn't stick. Problem is C file plugin in VIM. Since file plugin is loaded after loading .vimrc, the settings in .vimrc are overwritten.
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+"set clipboard=unnamed     "set copy to system clipboard
+
+"auto Center
+nmap [ [zz
+nmap ] ]
+nmap G Gzz
+nmap { {zz
+nmap } }zz
+nmap n nzz
+nmap N Nzz
+nmap L Lzz
+nmap H Hzz
+nmap g; g;zz
+"set in Normal mode
+nmap == ==j 
+"go to creat a new line below crusor in normal mode
+nmap go o<ESC>k
+"gO to creat a new line above crusor in normal mode
+nmap gO O<ESC>j
+nmap K 7k
+nmap M 7j
+"Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"set for Plugin=========================================
+let mapleader=","        "set mapleader from \ to ,
+
+"set trigger for NerdTree
+"nmap <leader>t :NERDTree<CR>
+"let NERDTreeWinSize=32       "NERDTree wiondow size
+"let NERDTreeWinPos="right"   "NERDTree wiondwo position
+""let NERDTreeShowHidden=1    "display hiden files
+"let NERDTreeMinimalUI=1      "Don't dislpaly help information
+"let NERDTreeAutoDeleteBuffer=1   "real delete the file buffer
+"let NERDTreeMapOpenInTab='<ENTER>' "open file in new tab
+
+"set CtrlP
+"clik Ctrl+p open in folder mode
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlPMRU'
+nmap <leader>e :CtrlPMRU<CR>
+nmap <leader>d :CtrlP<CR>
+nmap <leader>c :CtrlPBuffer<CR>
+
+" ease Motion
+" <Leader>f{char} to move to {char}
+"map  <Leader>f <Plug>(easymotion-bd-f)
+"nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+"nmap <Leader>s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+"map <Leader>e <Plug>(easymotion-bd-jk) 
+"nmap <Leader>e <Plug>(easymotion-overwin-line)
+
+" Move to word map  <Leader>w <Plug>(easymotion-bd-w)
+"nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Change cursor shape
+"let &t_SI = \"\<Esc>]50;CursorShape=1\x7"
+"let &t_SR = \"\<Esc>]50;CursorShape=2\x7"
+"let &t_EI = \"\<Esc>]50;CursorShape=0\x7"
+
+" backspace wont delete in insert mode
+"set backspace=indent,eol,start
