@@ -85,7 +85,7 @@ Use homebrew to manage package.
 
 `brew update` : update homebrew first
 
-`brew option vim` : see options,
+`brew options vim` : see options,
 
 `brew install vim`
 
@@ -100,3 +100,13 @@ Use homebrew to manage package.
 One more thing you should do is to check your environment variables for those that might contain a full path to the system `vi/vim`, like EDITOR and update them to use the `/usr/local/bin/vim`.
 
 Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
+
+## Problem
+
+1. Access system clipboard of Mac:
+
+	`vim --version | grep clipboard` : check current vim support clipboard and -xterm_clipboard.
+
+	[Ref1](http://vim.wikia.com/wiki/Accessing_the_system_clipboard)
+
+	[Ref2](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
