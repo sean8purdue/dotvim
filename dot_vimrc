@@ -28,7 +28,8 @@ vnoremap <C-W> "*y
 "past clipboard in normal mode, if in visual using CMD+v
 nnoremap <C-D> o<Esc>"*p
 
-"nnoremap <C-w> bdw
+set clipboard=unnamed     "set copy to system clipboard
+
 " Linux General===============
 " Finding Files
 "set path+=**
@@ -68,8 +69,9 @@ let base16colorspace=256  "Access colors present in 256 colorspace
 "set formatoptions-=cro
 "I've got set formatoptions-=cro in my vimrc, but for some reason it doesn't stick. Problem is C file plugin in VIM. Since file plugin is loaded after loading .vimrc, the settings in .vimrc are overwritten.
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+" backspace wont delete in insert mode
+set backspace=indent,eol,start
 
-"set clipboard=unnamed     "set copy to system clipboard
 
 "auto Center
 nmap [ [zz
@@ -136,5 +138,3 @@ nmap <leader>c :CtrlPBuffer<CR>
 "let &t_SR = \"\<Esc>]50;CursorShape=2\x7"
 "let &t_EI = \"\<Esc>]50;CursorShape=0\x7"
 
-" backspace wont delete in insert mode
-"set backspace=indent,eol,start
