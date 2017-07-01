@@ -131,4 +131,6 @@ Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
 
 	[Ref2 Not Resolevd](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
 	
-2. 
+2. "backspace wont delete in insert mode
+
+	`set backspace=indent,eol,start`
