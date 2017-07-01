@@ -78,3 +78,25 @@ Use Vundle to manage the plugin.
 4. Install Plugins:
 
 	Launch vim and run : `PluginInstall`
+	
+## Vim Install in Mac
+
+Use homebrew to manage package.
+
+`brew update` : update homebrew first
+
+`brew option vim` : see options,
+
+`brew install vim`
+
+`brew install vim --override-system-vim`
+
+`brew install vim ----with-client-server` : This will enable the clipboard function of vim.  If you want X11 clipboard support, you need to install it with the --with-client-server option.
+
+`brew uninstall vim` : to uninstall vim
+
+`brew upgrade vim` : If you had Vim already installed with Homebrew (or if in the future you'd like to upgrade the Vim version).
+
+One more thing you should do is to check your environment variables for those that might contain a full path to the system `vi/vim`, like EDITOR and update them to use the `/usr/local/bin/vim`.
+
+Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
