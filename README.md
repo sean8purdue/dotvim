@@ -89,9 +89,10 @@ Use homebrew to manage package.
 
 `brew install vim`
 
-`brew install vim --override-system-vim`
+`brew install vim --override-system-vim` :Dangerous
 
-`brew install vim ----with-client-server` : This will enable the clipboard function of vim.  If you want X11 clipboard support, you need to install it with the --with-client-server option.
+`brew install vim ----with-client-server` : This will enable the clipboard function of vim.  If you want X11 clipboard support, you need to install it with the --with-client-server option. 
+:**Dangerous**!! will install a non Mac-compatable version, which make the system clipboard not accessed to vim.
 
 `brew uninstall vim` : to uninstall vim
 
@@ -105,8 +106,29 @@ Homebrew will install vim to `/usr/local/Cellar/vim/8.0.06`
 
 1. Access system clipboard of Mac:
 
-	`vim --version | grep clipboard` : check current vim support clipboard and -xterm_clipboard.
+	`vim --version | grep clipboard` : check current vim support clipboard and -xterm_clipboard. Use MacOS X (unix) version, or system clipboard may not be used!!!!!!
+	
+	~~~
+	➜  ~ vim --version
+	VIM - Vi IMproved 8.0 (2016 Sep 12, compiled Jun 24 2017 12:45:56)
+	➜ MacOS X (unix) version
+	Included patches: 1-666
+	➜ Compiled by Homebrew
+  ~~~
+	
+	Iterm2 : 
+	
+	Select Copy to pasteboad on selection
+	
+	select Applications in terminal may access clipboard
+	
+	in `.vimrc` :
+	
+	`set clipboard=unnamed `   "set copy to system clipboard
+	
 
-	[Ref1](http://vim.wikia.com/wiki/Accessing_the_system_clipboard)
+	[Ref1 Not Resolevd](http://vim.wikia.com/wiki/Accessing_the_system_clipboard) 
 
-	[Ref2](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
+	[Ref2 Not Resolevd](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
+	
+2. 
