@@ -152,3 +152,13 @@ Use Vundle to manage the plugin.
 	"formatoptions-=c formatoptions-=r formatoptions-=o
 	"set formatoptions-=cro
 	"I've got set formatoptions-=cro in my vimrc, but for some reason it doesn't stick. Problem is C file plugin in VIM. Since file plugin is loaded after loading .vimrc, the settings in .vimrc are overwritten.
+	
+4. Heighlight all search patterns and Map <CR> to clear last search highlighting
+	
+	`set hlsearch` 
+	
+	`nnoremap <CR> :noh<CR>`    
+	   
+	**!!!! Dangerous!!** Map \<ESC> May course errors and unexpected behaviours
+
+
