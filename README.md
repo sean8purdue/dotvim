@@ -161,4 +161,48 @@ Use Vundle to manage the plugin.
 	   
 	**!!!! Dangerous!!** Map \<ESC> May course errors and unexpected behaviours
 
+## Vim map, noremap, remap
+
+`remap` is an **option** that makes mappings work recursively. By default it is on and I'd recommend you leave it that way. The rest are **mapping commands**, described below:
+
+`:map` and `noremap` are **recursive** and **non-recursive** versions of the various mapping commands. What that means is that if you do:
+
+```bash
+:map j gg
+:map Q j
+:noremap W j
+```
+
+`j` will be mapped to `gg`. `Q` will also be mapped to `gg`, because `j` will be expanded for the recursive mapping. `W` will be mapped to `j` (and not to `gg`) because `j` will not be expanded for the non-recursive mapping.
+
+Now remember that Vim is a **modal editor**. It has a **normal** mode, **visual** mode and other modes.
+
+For each of these sets of mappings, there is a mapping that works in normal, visual, select and operator modes (`:map` and `:noremap`), one that works in normal mode (`:nmap`and `nnoremap`), one in visual mode (`:vmap` and `:vnoremap`) and so on.
+
+`map` is the "root" of all recursive mapping commands. The root form applies to "normal", "visual+select", and "operator-pending" modes.
+
+`noremap` is the "root" of all non-recursive mapping commands. The root form applies to the same modes as map.
+
+(Note that there are also the `!` modes like `map!` that apply to insert & command-line.)
+
+**"Recursive"** means that the mapping is expanded to a result, then the result is expanded to another result, and so on.
+
+The expansion stops when one of these is true:
+
+the result is no longer mapped to anything else.
+a non-recursive mapping has been applied (i.e. the "noremap" [or one of its ilk] is the final expansion).
+At that point, vim's default "meaning" of the final result is applied/executed.
+
+**"Non-recursive"** means the mapping is only expanded once, and that result is applied/executed.
+
+Example:
+
+```bash
+nmap K H
+nnoremap H G
+nnoremap G gg
+```
+The above causes `K` to expand to `H`, then `H` to expand to `G` and stop. It stops because of the nnoremap, which expands and stops immediately. The meaning of `G` will be executed (i.e. "jump to last line"). At most one non-recursive mapping will ever be applied in an expansion chain (it would be the last expansion to happen).
+
+The mapping of `G` to gg only applies if you press `G`, but not if you press `K`. This mapping doesn't affect pressing `K` regardless of whether `G` was mapped recursively or not, since it's line 2 that causes the expansion of K to stop, so line 3 wouldn't be used.
 

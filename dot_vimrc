@@ -54,7 +54,7 @@ nnoremap == ==j
 nnoremap go o<ESC>k
 "gO to creat a new line above crusor in normal mode
 nnoremap gO O<ESC>j
-nnoremap g<SPACE> i<SPACE><ESC>
+nnoremap <SPACE> i<SPACE><ESC>l
 nnoremap K 7k
 nnoremap M 7j
 "Easier split navigations
