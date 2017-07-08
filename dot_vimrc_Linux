@@ -24,20 +24,24 @@ filetype plugin indent on    " required
 
 " Mac Specify================
 "map Ctrl + E in normal mode to copy to clipboard
-nnoremap <C-E> "*yy
+"nnoremap <C-E> "+yy
 "map Ctrl + E in visual mode to copy to clipboard
-vnoremap <C-W> "*y
+"vnoremap <C-W> "+y
 "paste clipboard in normal mode, if in visual using CMD+v
-nnoremap <C-D> o<Esc>"*p
+"nnoremap <C-D> o<Esc>"*p
+
+"set clipboard=unnamed     "set copy to system clipboard
 
 " Linux General===============
 syntax on
 set number
 set mouse=a          "set mouse cursor move
 set laststatus=2
-set background=dark  "set colorscheme
-colorscheme Tomorrow-Night_Sean
-let base16colorspace=256  "Access colors present in 256 colorspace
+"set background=dark  "set colorscheme
+"colorscheme Tomorrow-Night_Sean
+"let base16colorspace=256  "Access colors present in 256 colorspace
+colorscheme delek
+set t_Co=256
 
 set tabstop=4        "when indenting with '>', use 4 spaces width
 set shiftwidth=4     "On pressing tab, insert 4 spaces
@@ -75,6 +79,7 @@ nnoremap g; g;zz
 "Problem on Mac==========================================
 "disable Auto Comment in newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+"set formatoptions-=cro
 set backspace=indent,eol,start  "backspace wont delete in insert mode
 
 " Set for Plugin=========================================
@@ -125,5 +130,3 @@ nmap <leader>c :CtrlPBuffer<CR>
 "let &t_SI = \"\<Esc>]50;CursorShape=1\x7"
 "let &t_SR = \"\<Esc>]50;CursorShape=2\x7"
 "let &t_EI = \"\<Esc>]50;CursorShape=0\x7"
-
-"set clipboard=unnamed     "share yy to copy to system clipboard
