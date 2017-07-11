@@ -106,6 +106,8 @@ alias lo="git log --oneline --abbrev-commit --decorate --color --graph"
 alias lg="git log --oneline --abbrev-commit --decorate --color"
 alias lt="git log -1 HEAD"
 alias push="git push origin"
+alias fetch="git fetch origin"
+alias pull="git pull --rebase origin"
 
 alias dl="git diff HEAD^ HEAD"
 alias dd="git diff HEAD"
