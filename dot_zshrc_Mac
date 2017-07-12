@@ -113,6 +113,7 @@ alias lt="git log -1 HEAD"
 alias push="git push origin"
 alias fetch="git fetch origin"
 alias pull="git pull --rebase origin"
+alias tag="git tag"
 
 alias dl="git diff HEAD^ HEAD"
 alias dd="git diff HEAD"
