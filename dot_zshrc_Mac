@@ -119,7 +119,7 @@ alias dl="git diff HEAD^ HEAD"
 alias dd="git diff HEAD"
 alias dh="git diff HEAD^"
 
-alias rb="git rebase -i"
+alias rb="git rebase"
 alias ref="git reflog"
 alias sts="git stash"
 alias gcl="git clean"
