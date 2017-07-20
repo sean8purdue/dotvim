@@ -87,8 +87,10 @@ let mapleader=","        "set mapleader from \ to ,
 
 " Set CtrlP
 nmap <leader>e :CtrlPMRU<CR>
-nmap <leader>d :CtrlP<CR>
+nmap <leader>v :CtrlP<CR>
 nmap <leader>c :CtrlPBuffer<CR>
+nmap <leader>d :CtrlP :pwd<CR>
+nmap <leader>f :CtrlP ..<CR>
 "clik Ctrl+p open in folder mode
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlPMRU'

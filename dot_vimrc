@@ -24,9 +24,9 @@ filetype plugin indent on    " required
 
 " Mac Specify================
 "map Ctrl + E in normal mode to copy to clipboard
-nnoremap <C-E> "*yy
+"nnoremap <C-E> "*yy
 "map Ctrl + E in visual mode to copy to clipboard
-vnoremap <C-W> "*y
+vnoremap <C-C> "*y
 "paste clipboard in normal mode, if in visual using CMD+v
 nnoremap <C-D> o<Esc>"*p
 
@@ -60,6 +60,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" tab switch
+nnoremap <C-E> :tabn<CR>
+nnoremap <C-R> :tabp<CR>
+nnoremap <C-W> :tabclose<CR>
 "auto Center
 nnoremap [ [zz
 nnoremap ] ]
@@ -82,8 +86,10 @@ let mapleader=","        "set mapleader from \ to ,
 
 " Set CtrlP
 nmap <leader>e :CtrlPMRU<CR>
-nmap <leader>d :CtrlP<CR>
+nmap <leader>v :CtrlP<CR>
 nmap <leader>c :CtrlPBuffer<CR>
+nmap <leader>d :CtrlP :pwd<CR>
+nmap <leader>f :CtrlP ..<CR>
 "clik Ctrl+p open in folder mode
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlPMRU'
