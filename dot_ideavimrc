@@ -1,0 +1,31 @@
+" Mac Specify================
+"map Ctrl + E in normal mode to copy to clipboard
+"nnoremap <C-E> "*yy
+"map Ctrl + E in visual mode to copy to clipboard
+"vnoremap <C-W> "*y
+"past clipboard in normal mode, if in visual using CMD+v
+"nnoremap <C-D> o<Esc>"*p
+
+"mute the beep sound
+set visualbell
+set noerrorbells
+
+"auto Center
+nmap [ [zz
+nmap ] ]zz
+nmap G Gzz
+nmap { {zz
+nmap } }zz
+nmap n nzz
+nmap N Nzz
+nmap L Lzz
+nmap H Hzz
+nmap g; g;zz
+"set in Normal mode
+nmap == ==j 
+"go to creat a new line below crusor in normal mode
+nmap go o<ESC>k
+"gO to creat a new line above crusor in normal mode
+nmap gO O<ESC>j
+nmap K 8k
+nmap F 8j
