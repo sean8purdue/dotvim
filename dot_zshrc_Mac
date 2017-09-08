@@ -90,6 +90,8 @@ alias f="cd .."
 alias ff="cd ../.."
 alias d="cd -"
 set -o vi
+# kill lag when the mode change when you hit <ESC>
+export KEYTIMEOUT=1
 
 # function cd_up() {
 #   cd $(printf "%0.0s../" $(seq 1 $1));

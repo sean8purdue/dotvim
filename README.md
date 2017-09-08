@@ -206,3 +206,11 @@ The above causes `K` to expand to `H`, then `H` to expand to `G` and stop. It st
 
 The mapping of `G` to gg only applies if you press `G`, but not if you press `K`. This mapping doesn't affect pressing `K` regardless of whether `G` was mapped recursively or not, since it's line 2 that causes the expansion of K to stop, so line 3 wouldn't be used.
 
+### kill the lag in vi mode of zsh
+By default, there is a 0.4 second delay after you hit the <ESC> key and when the mode change is registered. This results in a very jarring and frustrating transition between modes. Let's reduce this delay to 0.1 seconds.
+
+~~~
+export KEYTIMEOUT=1
+~~~
+
+This can result in issues with other terminal commands that depended on this delay. If you have issues try raising the delay.
