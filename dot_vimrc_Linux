@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'craigemery/vim-autotag'
 
 " Backup
 "Plugin 'Raimondi/delimitMate'     "Auto Pair
@@ -106,6 +107,7 @@ nmap <leader>g :CtrlP ..<CR>
 
 " Set Tagbar
 nnoremap <silent> <leader>b :TagbarToggle<CR>
+nnoremap <C-f> :tag<CR>
 
 " set trigger for NerdTree
 "nmap <leader>t :NERDTree<CR>

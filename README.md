@@ -19,6 +19,7 @@ Use Vundle to manage the plugin.
 6. [Vundle](https://github.com/VundleVim/Vundle.vim)
 7. [tagbar](https://github.com/majutsushi/tagbar)
 8. [easymotion](https://github.com/easymotion/vim-easymotion)
+9. [autotag](https://github.com/craigemery/vim-autotag)
 
 ## Update
 
@@ -26,6 +27,8 @@ Use Vundle to manage the plugin.
 	- Install Tagbar plugin   
   	Set map key for `Tagbar` troggle, revise map for `Ctrlp+tags`
   	- Install `easymotion` and map `goto word`
+  	- Install `autotag` plugin
+  	- Map forward key for `ctags`
 
 ```
 nmap <leader>f :CtrlPTag<CR>
@@ -37,6 +40,9 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 " Ease Motion
 " Move to word map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+ " Set Tagbar
+nnoremap <C-f> :tag<CR>
 
 ```
 

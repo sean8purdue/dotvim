@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'craigemery/vim-autotag'
 
 " Backup
 "Plugin 'scrooloose/nerdtree'
@@ -100,6 +101,7 @@ nmap <leader>g :CtrlP ..<CR>
 
 " Set Tagbar
 nnoremap <silent> <leader>b :TagbarToggle<CR>
+nnoremap <C-f> :tag<CR>
 
 " Ease Motion
 " Move to word map  <Leader>w <Plug>(easymotion-bd-w)
