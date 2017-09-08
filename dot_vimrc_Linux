@@ -11,12 +11,14 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'easymotion/vim-easymotion'
 
 " Backup
+"Plugin 'Raimondi/delimitMate'     "Auto Pair
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'tpope/vim-surround'
 "Plugin 'easymotion/vim-easymotion'
-"Plugin 'Raimondi/delimitMate'     "Auto Pair
 "Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()            " required
@@ -64,6 +66,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" tab switch
+nnoremap <C-E> :tabn<CR>
+" conflict with redoing last cancel with u
+"nnoremap <C-R> :tabp<CR> 
+nnoremap <C-W> :tabclose<CR>
+
 "auto Center
 nnoremap [ [zz
 nnoremap ] ]
@@ -90,10 +98,14 @@ nmap <leader>e :CtrlPMRU<CR>
 nmap <leader>v :CtrlP<CR>
 nmap <leader>c :CtrlPBuffer<CR>
 nmap <leader>d :CtrlP :pwd<CR>
-nmap <leader>f :CtrlP ..<CR>
+nmap <leader>f :CtrlPTag<CR>
+nmap <leader>g :CtrlP ..<CR>
 "clik Ctrl+p open in folder mode
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Set Tagbar
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 " set trigger for NerdTree
 "nmap <leader>t :NERDTree<CR>
@@ -117,7 +129,7 @@ nmap <leader>f :CtrlP ..<CR>
 "nmap <Leader>e <Plug>(easymotion-overwin-line)
 
 " Move to word map  <Leader>w <Plug>(easymotion-bd-w)
-"nmap <Leader>w <Plug>(easymotion-overwin-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " Backup====================================
 "set relativenumber

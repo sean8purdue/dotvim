@@ -17,6 +17,30 @@ Use Vundle to manage the plugin.
 4. [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 5. [syntastic](https://github.com/vim-syntastic/syntastic)
 6. [Vundle](https://github.com/VundleVim/Vundle.vim)
+7. [tagbar](https://github.com/majutsushi/tagbar)
+8. [easymotion](https://github.com/easymotion/vim-easymotion)
+
+## Update
+
+- 090817
+	- Install Tagbar plugin   
+  	Set map key for `Tagbar` troggle, revise map for `Ctrlp+tags`
+  	- Install `easymotion` and map `goto word`
+
+```
+nmap <leader>f :CtrlPTag<CR>
+nmap <leader>g :CtrlP ..<CR>
+
+" Set Tagbar
+nnoremap <silent> <leader>b :TagbarToggle<CR>
+
+" Ease Motion
+" Move to word map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+```
+
+
 
 ## Vundle Install and Setting
 
