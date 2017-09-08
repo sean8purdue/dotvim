@@ -41,7 +41,7 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 " Move to word map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
- " Set Tagbar
+ " Set ctags
 nnoremap <C-f> :tag<CR>
 
 ```
