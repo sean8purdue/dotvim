@@ -86,12 +86,17 @@ alias l="ls -l"
 alias ll="ls -al"
 alias vi="vim"
 alias python="python3"
+alias py="python3"
 alias f="cd .."
 alias ff="cd ../.."
 alias d="cd -"
 set -o vi
 # kill lag when the mode change when you hit <ESC>
 export KEYTIMEOUT=1
+# fix the backspace key won't delete in zsh vi mode
+bindkey "^?" backward-delete-char
+# map <CTRL>w to backward kill word in insert mode of zsh vi mode
+bindkey "^W" backward-kill-word
 
 # function cd_up() {
 #   cd $(printf "%0.0s../" $(seq 1 $1));

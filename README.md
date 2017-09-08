@@ -109,7 +109,7 @@ Use Vundle to manage the plugin.
 
 ## Problem
 
-1. Access system clipboard of Mac:
+### 1 Access system clipboard of Mac:
 
 	`vim --version | grep clipboard` : check current vim support clipboard and -xterm_clipboard. Use MacOS X (unix) version, or system clipboard may not be used!!!!!!
 	
@@ -135,12 +135,28 @@ Use Vundle to manage the plugin.
 [Ref1 Not Resolevd](http://vim.wikia.com/wiki/Accessing_the_system_clipboard) 
 
 [Ref2 Not Resolevd](http://www.markcampbell.me/2016/04/12/setting-up-yank-to-clipboard-on-a-mac-with-vim.html)
-	
-2. "backspace wont delete in insert mode
+
+### 2 backspace wont delete in insert mode
+
+#### - If backspace won't delete in vim, then add the belowing line in `.vimrc`
 
 	`set backspace=indent,eol,start`
 	
-3. Disable automatic comm: 
+#### - Fix the backspace key won't delete in zsh vi mode
+
+add this line in `.zshrc`
+
+`bindkey "^?" backward-delete-char`
+
+#### - map `<CTRL>w` to backward kill word in insert mode of zsh vi mode
+
+add this line in `.zshrc`
+
+`bindkey "^W" backward-kill-word`
+
+<ref>(https://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode)
+	
+### 3 Disable automatic comm: 
 	
 	`autocmd BufNewFile,BufRead * setlocal formatoptions-=cro`
 
@@ -153,13 +169,25 @@ Use Vundle to manage the plugin.
 	"set formatoptions-=cro
 	"I've got set formatoptions-=cro in my vimrc, but for some reason it doesn't stick. Problem is C file plugin in VIM. Since file plugin is loaded after loading .vimrc, the settings in .vimrc are overwritten.
 	
-4. Heighlight all search patterns and Map <CR> to clear last search highlighting
+### 4 Heighlight all search patterns and Map <CR> to clear last search highlighting
 	
 	`set hlsearch` 
 	
 	`nnoremap <CR> :noh<CR>`    
 	   
 	**!!!! Dangerous!!** Map \<ESC> May course errors and unexpected behaviours
+	
+
+### 5 kill the lag in vi mode of zsh
+By default, there is a 0.4 second delay after you hit the <ESC> key and when the mode change is registered. This results in a very jarring and frustrating transition between modes. Let's reduce this delay to 0.1 seconds.
+
+~~~
+export KEYTIMEOUT=1
+~~~
+
+This can result in issues with other terminal commands that depended on this delay. If you have issues try raising the delay.
+
+
 
 ## Vim map, noremap, remap
 
@@ -206,11 +234,3 @@ The above causes `K` to expand to `H`, then `H` to expand to `G` and stop. It st
 
 The mapping of `G` to gg only applies if you press `G`, but not if you press `K`. This mapping doesn't affect pressing `K` regardless of whether `G` was mapped recursively or not, since it's line 2 that causes the expansion of K to stop, so line 3 wouldn't be used.
 
-### kill the lag in vi mode of zsh
-By default, there is a 0.4 second delay after you hit the <ESC> key and when the mode change is registered. This results in a very jarring and frustrating transition between modes. Let's reduce this delay to 0.1 seconds.
-
-~~~
-export KEYTIMEOUT=1
-~~~
-
-This can result in issues with other terminal commands that depended on this delay. If you have issues try raising the delay.
