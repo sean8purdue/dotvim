@@ -93,8 +93,8 @@ nmap <leader>e :CtrlPMRU<CR>
 nmap <leader>v :CtrlP<CR>
 nmap <leader>c :CtrlPBuffer<CR>
 nmap <leader>d :CtrlP :pwd<CR>
-nmap <leader>f :CtrlPTag<CR>
-nmap <leader>g :CtrlP ..<CR>
+nmap <leader>g :CtrlPTag<CR>
+"nmap <leader>g :CtrlP ..<CR>
 "clik Ctrl+p open in folder mode
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlPMRU'
