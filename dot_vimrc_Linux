@@ -15,6 +15,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'craigemery/vim-autotag'
 
+Plugin 'dracula/vim'
+
 " Backup
 "Plugin 'Raimondi/delimitMate'     "Auto Pair
 "Plugin 'scrooloose/nerdtree'
@@ -43,8 +45,8 @@ set laststatus=2
 "set background=dark  "set colorscheme
 "colorscheme Tomorrow-Night_Sean
 "let base16colorspace=256  "Access colors present in 256 colorspace
-colorscheme delek
-set t_Co=256
+"colorscheme delek
+"set t_Co=256
 
 set tabstop=4        "when indenting with '>', use 4 spaces width
 set shiftwidth=4     "On pressing tab, insert 4 spaces
