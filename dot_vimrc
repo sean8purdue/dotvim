@@ -36,9 +36,16 @@ nnoremap <C-D> o<Esc>"*p
 set number
 set mouse=a          "set mouse cursor move
 set laststatus=2
-syntax on
-color dracula
-"set background=dark  "set colorscheme
+
+" dracula colorscheme
+"syntax on
+"color dracula
+
+syntax enable
+set background=dark
+"set background=light
+colorscheme solarized
+
 "colorscheme Tomorrow-Night_Sean
 "let base16colorspace=256  "Access colors present in 256 colorspace
 
