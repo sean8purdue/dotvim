@@ -39,12 +39,14 @@ set laststatus=2
 
 " dracula colorscheme
 "syntax on
-"color dracula
-
 syntax enable
 set background=dark
+color dracula
+
+"syntax enable
+"set background=dark
 "set background=light
-colorscheme solarized
+"colorscheme solarized
 
 "colorscheme Tomorrow-Night_Sean
 "let base16colorspace=256  "Access colors present in 256 colorspace
@@ -106,6 +108,16 @@ nmap <leader>g :CtrlPTag<CR>
 "clik Ctrl+p open in folder mode
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Exclude files and directories using Vim's wildignore and CtrlP's own g:ctrlp_custom_ignore:
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " Set Tagbar
 nnoremap <silent> <leader>b :TagbarToggle<CR>

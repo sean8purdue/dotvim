@@ -217,6 +217,31 @@ export KEYTIMEOUT=1
 
 This can result in issues with other terminal commands that depended on this delay. If you have issues try raising the delay.
 
+### 6 Ctrlp 
+
+* Clear Cache
+
+In vim type `:CtrlPClearCache`, or   
+in ctrl-p mode already: hit <F5>. (Sometime not work)
+
+Will clear the cache for **current vim working directory** only!!
+
+Did you press <F5> in CtrlP or run `:CtrlPClearAllCaches` to clear the cache? If you want to be sure, delete the `.cache/ctrlp` dir in your home dir will delete cache for all directories.
+
+* Exclude files and directories using Vim's `wildignore` and CtrlP's own `g:ctrlp_custom_ignore`:
+
+
+```vim
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+    let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ 'link': 'some_bad_symbolic_links',
+      \ }
+```
 
 
 ## Vim map, noremap, remap
