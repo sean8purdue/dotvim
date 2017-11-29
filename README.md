@@ -243,6 +243,11 @@ Did you press <F5> in CtrlP or run `:CtrlPClearAllCaches` to clear the cache? If
       \ }
 ```
 
+### 7 Z
+
+* Clear Cache
+
+delete the `.z` file in the root directory. `.z` file have the browse history.
 
 ## Vim map, noremap, remap
 
