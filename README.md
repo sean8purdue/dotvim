@@ -294,3 +294,15 @@ The above causes `K` to expand to `H`, then `H` to expand to `G` and stop. It st
 
 The mapping of `G` to gg only applies if you press `G`, but not if you press `K`. This mapping doesn't affect pressing `K` regardless of whether `G` was mapped recursively or not, since it's line 2 that causes the expansion of K to stop, so line 3 wouldn't be used.
 
+## ZSH
+### 1Cycle through matches in ZSH
+
+```bash
+# Search backwards and forwards with a pattern
+bindkey -M vicmd '/' history-incremental-pattern-search-backward
+bindkey -M vicmd '?' history-incremental-pattern-search-forward
+
+# set up for insert mode too
+bindkey -M viins '^R' history-incremental-pattern-search-backward
+bindkey -M viins '^F' history-incremental-pattern-search-forward
+```
