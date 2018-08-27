@@ -20,6 +20,7 @@ Use Vundle to manage the plugin.
 7. [tagbar](https://github.com/majutsushi/tagbar)
 8. [easymotion](https://github.com/easymotion/vim-easymotion)
 9. [autotag](https://github.com/craigemery/vim-autotag)
+10. [sneak](https://github.com/justinmk/vim-sneak)
 
 ## Update
 
