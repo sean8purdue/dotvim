@@ -9,10 +9,10 @@ Plugin 'VundleVim/Vundle.vim' " let Vundle manage, required
 Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'justinmk/vim-sneak'
 Plugin 'scrooloose/nerdcommenter'  "comment 
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-syntastic/syntastic'
+"Plugin 'justinmk/vim-sneak'   "conflict with original s S
 "Plugin 'majutsushi/tagbar'
 "Plugin 'craigemery/vim-autotag'
 
@@ -31,7 +31,7 @@ filetype plugin indent on    " required
 "map Ctrl + E in visual mode to copy to clipboard
 vnoremap <C-C> "*y
 "paste clipboard in normal mode, if in visual using CMD+v
-nnoremap <C-v> o<Esc>"*p
+nnoremap <C-E> o<Esc>"*p
 
 " Linux General===============
 set number
@@ -69,6 +69,20 @@ nnoremap gO O<ESC>j
 nnoremap <SPACE> i<SPACE><ESC>l
 nnoremap K 7k
 nnoremap M 7j
+
+"auto Center
+nnoremap G Gzz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap L Lzz
+nnoremap H Hzz
+nnoremap g; g;zz
+nnoremap g, g,zz
+nnoremap [ [zz
+nnoremap ] ]
+nnoremap { {zz
+nnoremap } }zz
+
 "Easier split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -80,25 +94,19 @@ nnoremap <C-E> :tabn<CR>
 "nnoremap <C-R> :tabp<CR> 
 nnoremap <C-W> :tabclose<CR>
 
-"auto Center
-nnoremap [ [zz
-nnoremap ] ]
-nnoremap G Gzz
-nnoremap { {zz
-nnoremap } }zz
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap L Lzz
-nnoremap H Hzz
-nnoremap g; g;zz
-
 "Problem on Mac==========================================
 "disable Auto Comment in newline
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 set backspace=indent,eol,start  "backspace wont delete in insert mode
 
 " Set for Plugin=========================================
-let mapleader=","        "set mapleader from \ to ,
+" let mapleader=","        "set mapleader from \ to ,
+" let mapleader=" "        "set mapleader from \ to ,
+
+" Set Sneak
+" map f <Plug>Sneak_s
+" map F <Plug>Sneak_S
+" map <leader> <Plug>Sneak_s
 
 " Set CtrlP
 nmap <leader>e :CtrlPMRU<CR>
