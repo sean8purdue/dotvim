@@ -307,3 +307,75 @@ bindkey -M vicmd '?' history-incremental-pattern-search-forward
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
 ```
+
+## Mac remap right command key to left ctrl
+
+- to reset any key, you simply run the command again with that key's value in both Src and Dst
+
+```
+hidutil property --set '{"UserKeyMapping":
+    [{"HIDKeyboardModifierMappingSrc":0x7000000e7,
+      "HIDKeyboardModifierMappingDst":0x7000000e0}]
+}'
+```
+
+0xe7 is the hex number for right command (right GUI)
+0xe0 is the hex number for left CTRL (right GUI)
+
+* Your changes will be lost at system reboot. If you want them to persist, put them in a script and setup a login hook:
+```
+chmod +x /Users/Shared/login_script.sh
+sudo defaults write com.apple.loginwindow LoginHook /Users/Shared/login_script.sh
+```
+
+* Place your script, e.g., Test.sh, in a shared location - e.g., `/Users/Shared`
+
+- and make sure it is executable (`chmod +x /Users/Shared/Test.sh`).
+
+* From Terminal.app, run the following:
+`sudo defaults write com.apple.loginwindow LoginHook /Users/Shared/Test.sh`
+
+-------------------------------------------------------------
+
+```
+hidutil property --set '{"UserKeyMapping":
+    [{"HIDKeyboardModifierMappingSrc":0x7000000e6,
+      "HIDKeyboardModifierMappingDst":0x7000000e4}]
+}'
+```
+
+Note that the above command is not switching the Right Alt (e6) and Right Control(e4). They will both be Right Control. If you have a MacBook, you will not notice this until plugging in an external keyboard. If you want to switch Right Alt and Right Control, you need to add a second switch command, like the following.
+
+```
+hidutil property --set '{"UserKeyMapping":
+    [{"HIDKeyboardModifierMappingSrc":0x7000000e4,
+      "HIDKeyboardModifierMappingDst":0x7000000e6},
+     {"HIDKeyboardModifierMappingSrc":0x7000000e6,
+      "HIDKeyboardModifierMappingDst":0x7000000e4}]
+}’
+```
+
+To see the current mapping:
+
+`hidutil property --get "UserKeyMapping"`
+----------------------------------
+The table at the bottom of the Technical Note has a list of hex values for each key. To generalize the above answer to switch any keys, you must or the hex value from that list together with `0x700000000`. The following Python code demonstrates one way to do this.
+
+In [1]: def convert(val):
+   ...:     int_val = int(val, 16)
+   ...:     ref = '0x700000000'
+   ...:     int_ref = int(ref, 16)
+   ...:
+   ...:     return hex(int_ref | int_val)
+   ...:
+
+In [2]: r_alt = '0xE6'
+
+In [3]: print(convert(r_alt))
+0x7000000e6
+
+
+Ref:
+https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control
+https://developer.apple.com/library/archive/technotes/tn2450/_index.html#//apple_ref/doc/uid/DTS40017618-CH1-KEY_TABLE_USAGES
+https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x/46460200#46460200
