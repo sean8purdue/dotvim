@@ -358,6 +358,7 @@ hidutil property --set '{"UserKeyMapping":
 To see the current mapping:
 
 `hidutil property --get "UserKeyMapping"`
+
 ----------------------------------
 The table at the bottom of the Technical Note has a list of hex values for each key. To generalize the above answer to switch any keys, you must or the hex value from that list together with `0x700000000`. The following Python code demonstrates one way to do this.
 
